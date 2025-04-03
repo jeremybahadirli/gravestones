@@ -1,0 +1,41 @@
+{
+  "pools": [
+    {
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:splash_potion",
+          "functions": [
+            {
+              "function": "minecraft:set_name",
+              "name": {
+                "text": "Splash Potion of Undying",
+                "color": "yellow",
+                "italic": false
+              }
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:potion_contents": {
+                  "custom_color": 13631488
+                },
+                "minecraft:tooltip_display": {
+                  "hide_tooltip": false,
+                  "hidden_components": [
+                    "minecraft:potion_contents"
+                  ]
+                }
+              }
+            },
+            {
+              "function": "minecraft:set_custom_data",
+              "tag": "{undying_potion:1b}"
+            }
+          ]
+        }
+      ],
+      "rolls": 2
+    }
+  ]
+}
