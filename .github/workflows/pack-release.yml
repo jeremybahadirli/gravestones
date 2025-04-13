@@ -1,0 +1,22 @@
+name: Create Data Pack Release ZIP
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build-pack:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Zip data pack contents
+        run: |
+          zip -r datapack.zip * .[^.]* -x "*.git*" -x "*.github*"
+
+      - name: Upload ZIP to release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: gravestones.zip
